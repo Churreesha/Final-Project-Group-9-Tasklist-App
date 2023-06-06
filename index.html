@@ -11,12 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <header class="text-center">
         <h1 class="py-3 text-uppercase">Task List</h1>
     </header>
     <section class="container-sm text-center mt-5">
         <h2>Add New Task</h2>
     </section>
+
     <form>
         <!--Section1 Task Name/Assigned to-->
         <section class="container-sm mb-5">
@@ -44,13 +46,12 @@
         <!--Section3 Submit button-->               
             <div class="row py-3 gx-5">
                 <div class="col text-center">
-                    <button type="submit" class="btn btn-success">Add Task</button>
-                    </div>
+                    <button type="submit" class="btn btn-success shadow">Add Task</button>
                 </div>
             </div>
         </section>
     </form>
-    
+
     <!--Task Cards-->
     <div class="container-sm py-3 my-5">
         <div class="row py-3 gx-5">
@@ -58,7 +59,7 @@
                 <div class="card border-0 rounded-0 shadow">
                     <div class="card-body">
                         <!--Make Card Title Change to "DONE" when "marked as done" button is clicked-->
-                        <h5 class="card-title text-center text-uppercase">To Do</h4>
+                        <h5 class="card-title text-center text-uppercase">To Do</h5>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item border-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
