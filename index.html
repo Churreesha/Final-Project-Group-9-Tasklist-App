@@ -21,39 +21,39 @@
 
     <form>
         <!--Section1 Task Name/Assigned to-->
-        <section class="container-sm mb-5">
+        <section class="container-sm mb-3">
             <div class="row gx-5">
                 <div class="col-sm-6 pt-3">
                     <h4>Task Name:</h4>
-                    <input type="text" class="form-control form-control-lg">
+                    <input type="text" class="form-control form-control-lg" id="task-name">
                 </div>
                 <div class="col-sm-6 pt-3">
                     <h4>Assigned To:</h4>
-                    <input type="text" class="form-control form-control-lg">
+                    <input type="text" class="form-control form-control-lg" id="assigned-to">
                 </div>
             </div>
         <!--Section2 Description/Due date-->
             <div class="row gx-5">
                 <div class="col-sm-6 pt-3">
                     <h4>Task Description:</h4>
-                    <textarea class="form-control" id="FormControlTextarea" rows="3"></textarea>
+                    <input type="text" class="form-control form-control-lg" id="description">
                 </div>
                 <div class="col-sm-6 pt-3">
                     <h4>Due Date:</h4>
-                    <input type="text" class="form-control form-control-lg">
+                    <input type="date" class="form-control form-control-lg">
                 </div>
             </div>  
         <!--Section3 Submit button-->               
-            <div class="row py-3 gx-5">
+            <div class="row py-5 gx-5">
                 <div class="col text-center">
-                    <button type="submit" class="btn btn-success shadow">Add Task</button>
+                    <input type="submit" class="btn btn-success" value="Add Task">
                 </div>
             </div>
         </section>
     </form>
 
     <!--Task Cards-->
-    <div class="container-sm py-3 my-5">
+    <div class="container-sm my-3">
         <div class="row py-3 gx-5">
             <div class="col-lg-4 col-md-6">
                 <div class="card border-0 rounded-0 shadow">
