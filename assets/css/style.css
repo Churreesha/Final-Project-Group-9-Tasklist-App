@@ -12,6 +12,8 @@ h1, h2, h4, h5 {
 }
 
 .card {
+    aspect-ratio: 1 / 1;
+    width: 320px;
     background-color: #FFD7FD!important;
 }
 
