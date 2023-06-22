@@ -1,5 +1,29 @@
-let myTasks = [];
+function validFormFieldInput() {
+    let newDescription = document.querySelector("#description").value;
+    console.log(newDescription)
+    if (newDescription == "") {
+        alert("Please fill out a description");
+        return false;
+    }
 
+    let assigned = document.querySelector("#assignedTo").value;
+    console.log(assigned)
+    if (assigned == "") {
+        alert("Please assign a task.");
+        return false;
+    }
+
+    let dueDate = document.querySelector("#duedate").value;
+    console.log(duedate)
+    if (dueDate == "") {
+        alert("Please choose a due date.");
+        return false;
+    }
+}
+
+
+
+let myTasks = [];
 function Task(taskName, description, assignedTo, dueDate) {
     this.taskName = taskName;
     this.description = description;
