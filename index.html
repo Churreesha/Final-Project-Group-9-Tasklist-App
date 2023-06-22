@@ -20,28 +20,28 @@
         <h2>Add New Task</h2>
     </section>
 
-    <form id="task-form">
+    <form class="needs-validation" id="task-form">
         <!--Section1 Task Name/Assigned to-->
         <section class="container-sm mb-3">
             <div class="row gx-5">
                 <div class="col-sm-6 pt-3">
-                    <h4>Task Name:</h4>
-                    <input type="text" class="form-control form-control-lg" id="task-name">
+                    <label for="task-name" class="form-label h4">Task Name:</label>
+                    <input type="text" class="form-control form-control-lg" id="task-name" required>
                 </div>
                 <div class="col-sm-6 pt-3">
-                    <h4>Assigned To:</h4>
-                    <input type="text" class="form-control form-control-lg" id="assigned-to">
+                    <label for="assigned-to" class="form-label h4">Assigned To:</label>
+                    <input type="text" class="form-control form-control-lg" id="assigned-to" required>
                 </div>
             </div>
         <!--Section2 Description/Due date-->
             <div class="row gx-5">
                 <div class="col-sm-6 pt-3">
-                    <h4>Task Description:</h4>
+                    <label for="description" class="form-label h4">Task Description:</label>
                     <input type="text" class="form-control form-control-lg" id="description">
                 </div>
                 <div class="col-sm-6 pt-3">
-                    <h4>Due Date:</h4>
-                    <input type="date" class="form-control form-control-lg" id="due-date">
+                    <label for="due-date" class="form-label h4">Due Date:</label>
+                    <input type="date" class="form-control form-control-lg" id="due-date" required>
                 </div>
             </div>  
         <!--Section3 Submit button-->               
