@@ -15,8 +15,9 @@ function render() {
         let taskEl = document.createElement("div");
         taskEl.setAttribute("class", "col d-flex justify-content-center")
         taskEl.innerHTML = `
-            <div class="card d-flex p-4 border-0 rounded-0 shadow">
-                <h5 class="card-title text-center text-uppercase">To Do</h5>                   
+            <div class="card p-4 border-0 rounded-0 shadow">
+                <button type="button" class="btn btn-link text-decoration-none text-danger small ms-auto p-0" onclick="removeTask(${i})">X</button>
+                <h5 class="card-title text-center text-uppercase">To Do</h5>                
                 <ul class="list-group list-group-flush my-auto">
                     <li class="list-group-item border-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill me-2" viewBox="0 0 16 16">
@@ -51,6 +52,11 @@ function render() {
             </div>`;
         taskCards.appendChild(taskEl);
     }
+}
+
+function removeTask(index) {
+    myTasks.splice(index, 1);
+    render();
 }
 
 function addTask() {
