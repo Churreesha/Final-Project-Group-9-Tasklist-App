@@ -1,10 +1,11 @@
 let myTasks = [];
 
-function Task(taskName, description, assignedTo, dueDate) {
+function Task(taskName, description, assignedTo, dueDate, done) {
     this.taskName = taskName;
     this.description = description;
     this.assignedTo = assignedTo;
     this.dueDate = dueDate;
+    this.done = done;
 }
 
 function render() {
@@ -17,7 +18,7 @@ function render() {
         taskEl.innerHTML = `
             <div class="card p-4 border-0 rounded-0 shadow">
                 <button type="button" class="btn btn-link text-decoration-none text-danger small ms-auto p-0" onclick="removeTask(${i})">X</button>
-                <h5 class="card-title text-center text-uppercase">To Do</h5>                
+                <h5 class="card-title text-center text-uppercase" class="done-status">${task.done ? "Done" : "To Do"}</h5>           
                 <ul class="list-group list-group-flush my-auto">
                     <li class="list-group-item border-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill me-2" viewBox="0 0 16 16">
@@ -47,17 +48,31 @@ function render() {
                     </li>
                 </ul>
                 <div class="text-center mt-auto">
-                    <button type="submit" class="btn btn-dark text-lowercase">Mark as Done</button>
+                    
+                    <button type="submit" class="btn btn-dark text-lowercase" id="done" onclick="changeStatus(${i})">Mark as Done</button>
                 </div>
             </div>`;
         taskCards.appendChild(taskEl);
     }
 }
 
+// remove task
 function removeTask(index) {
     myTasks.splice(index, 1);
     render();
 }
+
+// change task status
+Task.prototype.changeStatus = function() {
+    this.done = !this.done;      
+}
+
+function changeStatus(index) {
+    myTasks[index].changeStatus();
+    render()
+}
+
+
 
 function addTask() {
     let taskName = document.querySelector("#task-name").value;
@@ -73,3 +88,24 @@ document.querySelector("#task-form").addEventListener("submit", function(){
     event.preventDefault();
     addTask();
 });
+
+
+
+// setting Tasks to be stored in local storage
+function setData() {
+    localStorage.setItem('myTasks', JSON.stringify(myTasks));
+}
+
+//pulls task from local storage when page is refreshed
+function restore() {
+    if(!localStorage.myTasks) {
+        render();
+    }else {
+        let objects = localStorage.getItem('myTasks') // gets information from local storage to use in below loop to create DOM/display
+        objects = JSON.parse(objects);
+        myTasks = objects;
+        render();
+    }
+}
+
+restore();
