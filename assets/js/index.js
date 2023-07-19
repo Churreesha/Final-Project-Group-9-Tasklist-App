@@ -61,6 +61,12 @@ tasksList.addEventListener('click', (e) => {
         }
     }
 
+     //'Marked as done button' disappear when clicked
+         const doneBtn = document.querySelector('.done-btn');
+         if (doneBtn) {
+             doneBtn.style.display = 'none';
+     }    
+
     // Deletes clicked task ()
     if (e.target.classList.contains('delete-btn')) {    
         const parentCard = e.target.parentElement;
@@ -75,4 +81,7 @@ tasksList.addEventListener('click', (e) => {
             taskManager.save();
         }
     }
+
+    
 });
+

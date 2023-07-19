@@ -1,5 +1,5 @@
 // HTML to render on valid submission (task 6.1)
-const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) => {
+function createTaskHtml(id, taskName, description, assignedTo, dueDate, status) {
     return `<div class="col d-flex justify-content-center" data-task-id=${id}>
     <div class="card d-flex p-4 border-0 rounded-0 shadow">
         <button type="button" class="btn btn-link text-decoration-none text-danger small ms-auto p-0 lh-1 delete-btn">X</button>
@@ -36,8 +36,8 @@ const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) 
             <button type="submit" class="btn btn-dark text-lowercase done-btn">Mark as Done</button>
         </div>
     </div>
-</div>`
-};
+</div>`;
+}
 
 // Manages tasks in app (task 5.2)
 class TaskManager {
@@ -127,3 +127,5 @@ class TaskManager {
     }
 
 }
+
+module.exports = TaskManager
